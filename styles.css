@@ -11,13 +11,12 @@ body {
   width: 100%;
   height: 100%;
   background: #000;
-  color: #000;
   overflow: hidden;
 }
 
 body {
   opacity: 0;
-  transition: opacity 2.8s ease;
+  transition: opacity 2.4s ease;
 }
 
 body.is-on {
@@ -25,36 +24,30 @@ body.is-on {
 }
 
 main {
+  position: relative;
   width: 100%;
   height: 100%;
-  display: grid;
-  place-items: center;
+  background: #000;
 }
 
-.ghyll {
-  width: min(42vmin, 280px);
-  height: auto;
-  image-rendering: pixelated;
-  image-rendering: crisp-edges;
-  user-select: none;
+.shot {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 3.2s ease;
   pointer-events: none;
-  animation: breath 7s ease-in-out infinite;
+  user-select: none;
 }
 
-@keyframes breath {
-  0%,
-  100% {
-    opacity: 0.82;
-    filter: brightness(0.92);
-  }
-  50% {
-    opacity: 1;
-    filter: brightness(1.08);
-  }
+.shot.is-on {
+  opacity: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .ghyll {
-    animation: none;
+  .shot {
+    transition: none;
   }
 }
