@@ -15,21 +15,38 @@
       background: #000;
     }
     body {
-      display: grid;
-      place-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.2rem;
       font-family: Georgia, "Times New Roman", serif;
+    }
+    img {
+      display: block;
+      width: min(92vw, 1280px);
+      height: auto;
+      max-height: 78vh;
+      object-fit: contain;
+      user-select: none;
+      pointer-events: none;
     }
     p {
       margin: 0;
-      color: #6e6e6e;
-      letter-spacing: 0.42em;
-      font-size: 13px;
+      color: #c4c4c4;
+      letter-spacing: 0.36em;
+      font-size: 22px;
       text-transform: lowercase;
       user-select: none;
+    }
+    @media (max-width: 640px) {
+      p { font-size: 16px; letter-spacing: 0.28em; }
+      body { gap: 1.4rem; }
     }
   </style>
 </head>
 <body>
+  <img src="ghyll-contour-back.png?v=back1" alt="">
   <p>coming soon</p>
 </body>
 </html>
